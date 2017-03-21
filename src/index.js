@@ -58,4 +58,4 @@ export const injectToPIXI = (PIXI) => {
   }
 }
 
-export default actions;
+export default action;
