@@ -1,4 +1,3 @@
-import * as PIXI from 'pixi.js';
 import ActionManager from './ActionManager';
 import {MoveTo, MoveBy} from './ActionMove';
 import {ScaleTo, ScaleBy} from './ActionScale';
@@ -51,9 +50,12 @@ let action = {
   CallFunc: CallFunc,
 };
 
-if(!PIXI.actionManager){
-  PIXI.actionManager = new ActionManager();
+export const injectToPIXI = (PIXI) => {
+  if(!PIXI.actionManager){
+    PIXI.actionManager = new ActionManager();
 
-  PIXI.action = action;
+    PIXI.action = action;
+  }
 }
-export default action;
+
+export default actions;
